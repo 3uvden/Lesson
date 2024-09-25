@@ -7,6 +7,8 @@ int main() {
 
 	float numbers = 0;
 	float sum = 0;
+	float sumEven = 0;
+	float sumOdd = 0;
 	/*int a = 3;
 	while (a > 0)
 	{
@@ -31,12 +33,29 @@ int main() {
 		std::cin >> numbers;
 
 		if (numbers != 0) {
-			sum += numbers; 
+			sum += numbers;
+			if (int(numbers) % 2 == 0) {
+				sumEven += numbers;
+			}
+			else
+			{
+				sumOdd += numbers;
+			}
 		}
 
-	} while (numbers != 0);
-
+	}  while (numbers != 0);
+	sum += numbers;
+	if (int(numbers) % 2 == 0) {
+		sumEven += numbers;
+	}
+	else
+	{
+		sumOdd += numbers;
+	}
+	
 	std::cout << "Ñóììà ââåä¸ííûõ ÷èñåë: " << sum << "\n";
+	std::cout << "Ñóììà ÷¸òíûõ ÷èñåë: " << sumEven << "\n";
+	std::cout << "Ñóììà íå÷¸òíûõ ÷èñåë: " << sumOdd << "\n";
 
 	return 0;
 }
