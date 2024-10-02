@@ -1,16 +1,34 @@
 #include <iostream>
 #include <Windows.h>
-#include <string>
+#include <time.h>
 
 
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	//float numbers = 0;
-	//float sum = 0;
-	//float sumEven = 0;
-	//float sumOdd = 0;
-	/*int a = 3;
+	srand(time(NULL));
+	
+	int arr[20];
+
+	for (int i = 0; i < 20; ++i)
+	{
+		arr[i] = std::rand() % 16 - 5;
+	}
+
+	for (int i = 0; i < 20; ++i)
+	{
+		std::cout << arr[i] << " ";
+		if ((i + 1) % 10 == 0)
+		{
+			std::cout << "\n";
+		}
+	}
+	
+	/*float numbers = 0;
+	float sum = 0;
+	float sumEven = 0;
+	float sumOdd = 0;
+	int a = 3;
 	while (a > 0)
 	{
 
@@ -55,8 +73,7 @@ int main() {
 	std::cout << "—умма введЄнных чисел: " << sum << "\n";
 	std::cout << "—умма чЄтных чисел: " << sumEven << "\n";
 	std::cout << "—умма нечЄтных чисел: " << sumOdd << "\n";*/
-
-	float dollar = 92.86;
+	/*float dollar = 92.86;
 	float euro = 103.41;
 	float yuan = 13.22;
 	float Farit = 37;
@@ -88,6 +105,7 @@ int main() {
 	if (currency < 1 || currency > 6)
 	{
 		std::cout << "ќшибка! ¬ведите число от 1 до 5\n";
+		return 1;
 	} else
 	{
 		std::cout << "¬ведите кол-во рублей: ";
@@ -127,8 +145,7 @@ int main() {
 	}
 	else {
 		std::cout << "ќбмен отменЄн.\n";
-	}
+	}*/
 	
 	return 0;
 }
-
