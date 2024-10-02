@@ -1,29 +1,64 @@
 #include <iostream>
-#include <Windows.h>
-#include <time.h>
-
+#include <cstdlib>
+#include <windows.h>
 
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	srand(time(NULL));
-	
-	int arr[20];
+
+	int arr1[10];
+	int arr2[10];
+	bool coincid = false;
+
+	std::cout << "Введите 10 чисел от 0 до 10\n";
+	for (int i = 0; i < 10; i++) {
+		int input;
+		std::cout << "Число " << i + 1 << ": ";
+		std::cin >> input;
+
+		while (input < 0 || input > 10) {
+			std::cout << "Ошибка: число должно быть в диапазоне от 0 до 10. Попробуйте снова: ";
+			std::cin >> input;
+		}
+		arr2[i] = input;
+	}
+
+	for (int i = 0; i < 10; i++) {
+		arr1[i] = rand() % 11;
+		std::cout << arr1[i] << " ";
+	}
+
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+			if (arr1[i] == arr2[j]) {
+				coincid = true;
+				break;
+			}
+		}
+	}
+
+	if (coincid) {
+		std::cout << "\nВам повезло, у вас совпадает число с рандомом!\n";
+	}
+
+
+
+	/*int arr[20];
 
 	for (int i = 0; i < 20; ++i)
 	{
-		arr[i] = std::rand() % 16 - 5;
+		arr[i] = rand() % 16 - 5;
 	}
 
 	for (int i = 0; i < 20; ++i)
 	{
 		std::cout << arr[i] << " ";
-		if ((i + 1) % 10 == 0)
+		if (i == 9)
 		{
 			std::cout << "\n";
 		}
-	}
-	
+	}*/
 	/*float numbers = 0;
 	float sum = 0;
 	float sumEven = 0;
