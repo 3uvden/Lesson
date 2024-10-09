@@ -1,13 +1,71 @@
 #include <iostream>
 #include <cstdlib>
-#include <windows.h>
+#include <Windows.h>
 
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	srand(time(NULL));
 
-	int arr1[10];
+	float num1, num2;
+	char action;
+
+	int Add(int a, int b)
+	{
+		int temp = a + b;
+		return temp;
+	}
+
+	int Subtract(int a, int b)
+	{
+		int temp = a - b;
+		return temp;
+	}
+
+	float Multiply(float a, float b)
+	{
+		float temp = a * b;
+		return temp;
+	}
+
+	float Share(float a, float b)
+	{
+		if (b != 0)
+		{
+			float temp = a / b;
+			return temp;
+		} else
+		{
+			std::cout << "Делить на 0 нельзя!";
+		}
+	}
+
+	std::cout << "Введите первое число: ";
+	std::cin >> num1;
+
+	std::cout << "Введите действие (+, -, *, /): ";
+	std::cin >> action;
+
+	std::cout << "Введите второе число: ";
+	std::cin >> num2;
+
+		if (action == '+') {
+			std::cout << "Результат: " << Add(num1, num2) << "\n";
+		}
+		else if (action == '-') {
+			std::cout << "Результат: " << Subtract(num1, num2) << "\n";
+		}
+		else if (action == '*') {
+			std::cout << "Результат: " << Multiply(num1, num2) << "\n";
+		}
+		else if (action == '/') {
+			std::cout << "Результат: " << Share(num1, num2) << "\n";
+		}
+		else {
+			std::cout << "Неверное действие!\n";
+		}
+
+	/*int arr1[10];
 	int arr2[10];
 	bool coincid = false;
 
@@ -40,10 +98,7 @@ int main() {
 
 	if (coincid) {
 		std::cout << "\nВам повезло, у вас совпадает число с рандомом!\n";
-	}
-
-
-
+	}*/
 	/*int arr[20];
 
 	for (int i = 0; i < 20; ++i)
@@ -182,5 +237,7 @@ int main() {
 		std::cout << "Обмен отменён.\n";
 	}*/
 	
+
+
 	return 0;
 }
