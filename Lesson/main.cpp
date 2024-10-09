@@ -2,43 +2,46 @@
 #include <cstdlib>
 #include <Windows.h>
 
+float num1, num2;
+char action;
+
+int Add(int a, int b)
+{
+	int temp = a + b;
+	return temp;
+}
+
+int Subtract(int a, int b)
+{
+	int temp = a - b;
+	return temp;
+}
+
+float Multiply(float a, float b)
+{
+	float temp = a * b;
+	return temp;
+}
+
+float Share(float a, float b)
+{
+	if (b != 0)
+	{
+		float temp = a / b;
+		return temp;
+	}
+	else
+	{
+		std::cout << "Делить на 0 нельзя!";
+		return 0;
+	}
+}
+
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	srand(time(NULL));
 
-	float num1, num2;
-	char action;
-
-	int Add(int a, int b)
-	{
-		int temp = a + b;
-		return temp;
-	}
-
-	int Subtract(int a, int b)
-	{
-		int temp = a - b;
-		return temp;
-	}
-
-	float Multiply(float a, float b)
-	{
-		float temp = a * b;
-		return temp;
-	}
-
-	float Share(float a, float b)
-	{
-		if (b != 0)
-		{
-			float temp = a / b;
-			return temp;
-		} else
-		{
-			std::cout << "Делить на 0 нельзя!";
-		}
-	}
 
 	std::cout << "Введите первое число: ";
 	std::cin >> num1;
