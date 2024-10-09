@@ -61,7 +61,7 @@ int main() {
 		else if (action == '*') {
 			std::cout << "Результат: " << Multiply(num1, num2) << "\n";
 		}
-		else if (action == '/') {
+		else if (action == '/' && num2 != 0) {
 			std::cout << "Результат: " << Share(num1, num2) << "\n";
 		}
 		else {
