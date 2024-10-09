@@ -2,7 +2,60 @@
 #include <cstdlib>
 #include <Windows.h>
 
-float num1, num2;
+
+
+void FillArr(int arr[], int size) {
+	for (int i = 0; i < size; i++) {
+		arr[i] = rand() % 27 - 8;
+	}
+}
+
+void PrintArr(int arr[], int size) {
+	for (int i = 0; i < size; i++) {
+		std::cout << arr[i] << " ";
+	}
+	std::cout << "\n";
+}
+
+void MinMax(int arr[], int size, int& minIndex, int& min, int& maxIndex, int& max) {
+	min = arr[0];
+	max = arr[0];
+	minIndex = 0;
+	maxIndex = 0;
+
+	for (int i = 1; i < size; i++) {
+		if (arr[i] < min) {
+			min = arr[i];
+			minIndex = i;
+		}
+		if (arr[i] > max) {
+			max = arr[i];
+			maxIndex = i;
+		}
+	}
+}
+
+int main() {
+	
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	srand(time(NULL));
+	
+	const int size = 20;
+	int arr[size];
+
+	FillArr(arr, size);
+	PrintArr(arr, size);
+
+	int minIndex, min, maxIndex, max;
+	MinMax(arr, size, minIndex, min, maxIndex, max);
+
+	std::cout << "\nМинимум: индекс " << minIndex << " число " << min << "\n";
+	std::cout << "Максимум: индекс " << maxIndex << " число " << max << "\n";
+
+
+
+	/* float num1, num2;
 char action;
 
 int Add(int a, int b)
@@ -67,7 +120,7 @@ int main() {
 		else {
 			std::cout << "Неверное действие!\n";
 		}
-
+		*/
 	/*int arr1[10];
 	int arr2[10];
 	bool coincid = false;
@@ -240,7 +293,5 @@ int main() {
 		std::cout << "Обмен отменён.\n";
 	}*/
 	
-
-
 	return 0;
 }
