@@ -17,7 +17,7 @@ void PrintArr(int arr[], int size) {
 	std::cout << "\n";
 }
 
-void MinMax(int arr[], int size, int minIndex, int min, int maxIndex, int max) {
+void MinMax(int arr[], int size, int& minIndex, int& min, int& maxIndex, int& max) {
 	min = arr[0];
 	max = arr[0];
 	minIndex = 0;
